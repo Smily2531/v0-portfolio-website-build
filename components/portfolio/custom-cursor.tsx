@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -45,11 +47,15 @@ export function CustomCursor() {
     return null;
   }
 
+  const isDark = resolvedTheme === "dark";
+  const cursorColor = isDark ? "rgb(94, 234, 212)" : "rgb(13, 148, 136)";
+  const glowColor = isDark ? "rgba(94, 234, 212," : "rgba(13, 148, 136,";
+
   return (
     <>
       {/* Main dot */}
       <div
-        className="pointer-events-none fixed z-[9999] mix-blend-difference"
+        className="pointer-events-none fixed z-[9999]"
         style={{
           left: position.x,
           top: position.y,
@@ -59,13 +65,14 @@ export function CustomCursor() {
         }}
       >
         <div
-          className={`rounded-full bg-teal-400 transition-all duration-200 ease-out ${
+          className={`rounded-full transition-all duration-200 ease-out ${
             isPointer ? "h-10 w-10 opacity-50" : "h-3 w-3 opacity-100"
           }`}
           style={{
+            backgroundColor: cursorColor,
             boxShadow: isPointer
-              ? "0 0 20px rgba(94, 234, 212, 0.8), 0 0 40px rgba(94, 234, 212, 0.4)"
-              : "0 0 10px rgba(94, 234, 212, 0.6), 0 0 20px rgba(94, 234, 212, 0.3)",
+              ? `0 0 20px ${glowColor} 0.8), 0 0 40px ${glowColor} 0.4)`
+              : `0 0 10px ${glowColor} 0.6), 0 0 20px ${glowColor} 0.3)`,
           }}
         />
       </div>
@@ -82,8 +89,9 @@ export function CustomCursor() {
         }}
       >
         <div
-          className="h-6 w-6 rounded-full bg-teal-400/30"
+          className="h-6 w-6 rounded-full"
           style={{
+            backgroundColor: `${glowColor} 0.3)`,
             filter: "blur(8px)",
           }}
         />

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { ThemeToggle } from "./theme-toggle"
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -49,6 +50,7 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle />
           <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Link href="/resume.pdf" target="_blank">
               Resume
@@ -81,6 +83,10 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="flex items-center justify-between">
+              <span className="text-muted-foreground text-sm">Theme</span>
+              <ThemeToggle />
+            </div>
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
               <Link href="/resume.pdf" target="_blank">
                 Resume
