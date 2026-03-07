@@ -2,147 +2,116 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Folder, Video } from "lucide-react"
+import { ExternalLink, Github, Folder } from "lucide-react"
 import Link from "next/link"
 
-// Professional Projects Data
+// Placeholder projects - User will update these with their actual projects
 const projects = [
   {
     id: 1,
-    title: "FlySmily – Book Smarter, Travel Lighter",
-    description:
-      "Full-stack MERN flight booking platform with role-based dashboards for Customers, Admins, and Flight Operators. Real-time flight management and booking workflows.",
-    image: "https://drive.google.com/uc?id=1ZP8CNxxoLGPJk4ysJLb1-BTJaO5-5Ljf",
-    tech: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Mongoose",
-      "JWT",
-      "Bootstrap/Tailwind CSS",
-    ],
-    github: "https://github.com/Smily2531/FlySmily-BookSmarter-TravelLighter",
+    title: "Project 1",
+    description: "Description of your first project. Explain what problem it solves and the key features.",
+    image: null,
+    tech: ["React", "Node.js", "MongoDB"],
+    github: "https://github.com/Smily2531",
     live: "#",
-    video: "https://drive.google.com/file/d/1_A2jGVhcZXmjomic0ts-w1IdkbxrvQwL/view",
     featured: true,
   },
   {
     id: 2,
-    title: "SAMVAAD – AI Real-Time Communication & Meeting Assistant",
-    description:
-      "AI-powered real-time communication platform with messaging, video conferencing, live transcription, speaker diarization, and AI meeting summaries.",
-    image: "https://drive.google.com/uc?id=1uRom6hXhIEZi2LglEW7gcXTBFRKbqJGX",
-    tech: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Socket.io",
-      "Node.js",
-      "TypeScript",
-      "Python AI Services",
-      "Docker",
-      "Jenkins",
-    ],
-    github: "https://github.com/Smily2531/samvaad-ai",
+    title: "Project 2",
+    description: "Description of your second project. Highlight the technologies used and your role.",
+    image: null,
+    tech: ["Next.js", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/Smily2531",
     live: "#",
-    video: null,
     featured: true,
   },
   {
     id: 3,
-    title: "Event Ticketing Web Application",
-    description:
-      "MERN stack web app for managing event registrations and ticketing. Organizers can create events; users can register with automatic/manual approval workflows.",
-    image: "https://drive.google.com/uc?id=1ZyID7FtMTNZ7NdEzFwLvfRRD09oU4Tal",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Axios", "Context API"],
-    github: "https://github.com/Smily2531/event-ticketing-app",
+    title: "Project 3",
+    description: "Description of your third project. Share the impact or results of this project.",
+    image: null,
+    tech: ["Java", "Spring Boot", "MySQL"],
+    github: "https://github.com/Smily2531",
     live: "#",
-    video: null,
-    featured: true,
+    featured: false,
   },
   {
     id: 4,
-    title: "Secure Steganography Chat",
-    description:
-      "Spring Boot messaging platform that hides text messages in images using LSB steganography. Ensures encrypted communication with no plaintext storage.",
-    image: "https://drive.google.com/uc?id=1FygjY71eGbseZp9GL0UPGQyBZKG2ifGB",
-    tech: ["Java", "Spring Boot", "MySQL", "Thymeleaf", "Bootstrap", "Canvas API"],
-    github: "https://github.com/Smily2531/Secure-Steganography-Chat",
+    title: "Project 4",
+    description: "Description of your fourth project. Mention any challenges you overcame.",
+    image: null,
+    tech: ["MERN Stack", "REST API"],
+    github: "https://github.com/Smily2531",
     live: "#",
-    video: null,
     featured: false,
   },
   {
     id: 5,
-    title: "Deep Learning Fundus Image Analysis",
-    description:
-      "AI system detects diabetic retinopathy from retinal fundus images using Xception CNN. Provides instant predictions via Flask web interface.",
-    image: "https://drive.google.com/uc?id=1Hstt-CrKE2tWVzpgAc9Oy4bmGNmQbLbh",
-    tech: ["Python", "TensorFlow/Keras", "Xception CNN", "Flask", "NumPy", "HTML/CSS"],
-    github: "https://github.com/Smily2531/DeepLearning_Fundus_DR",
+    title: "Project 5",
+    description: "Description of your fifth project. Include any notable achievements.",
+    image: null,
+    tech: ["React", "Express.js", "MongoDB"],
+    github: "https://github.com/Smily2531",
     live: "#",
-    video: "https://drive.google.com/file/d/1IXfuCTzVBveESOMuqrYycPx3vBaAFveU/view",
     featured: false,
   },
   {
     id: 6,
-    title: "Login & Registration Form with Navigation Bar",
-    description:
-      "Responsive login and registration interface with modern navbar and toggle between login/signup forms. Clean UI with form validation.",
-    image: "https://drive.google.com/uc?id=1cuGtHmQSQVkF2yiupLja0hfL3x0XS98-",
-    tech: ["HTML5", "CSS3", "JavaScript"],
-    github: "https://github.com/Smily2531/login-registration-form-menubar",
+    title: "Project 6",
+    description: "Description of your sixth project. Explain what you learned from building it.",
+    image: null,
+    tech: ["Angular", "Node.js", "PostgreSQL"],
+    github: "https://github.com/Smily2531",
     live: "#",
-    video: null,
     featured: false,
   },
 ]
 
 export function Projects() {
-  const featuredProjects = projects.filter((p) => p.featured)
-  const otherProjects = projects.filter((p) => !p.featured)
+  const featuredProjects = projects.filter(p => p.featured)
+  const otherProjects = projects.filter(p => !p.featured)
 
   return (
     <section id="projects" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A collection of my professional projects demonstrating real-world problem-solving skills
+            A collection of projects I&apos;ve built to solve real problems
           </p>
         </div>
 
-        {/* Featured Projects */}
+        {/* Featured Projects - Larger Cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {featuredProjects.map((project) => (
-            <Card
-              key={project.id}
+            <Card 
+              key={project.id} 
               className="glass border-border hover:border-primary/50 transition-all duration-300 group overflow-hidden"
             >
               <CardContent className="p-0">
-                <div
-                  className="h-48 bg-cover bg-center flex items-center justify-center relative overflow-hidden"
-                  style={{
-                    backgroundImage: `url(${project.image})`,
-                  }}
-                >
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all" />
+                {/* Project Image Placeholder */}
+                <div className="h-48 bg-gradient-to-br from-primary/20 to-cyan-500/20 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Folder className="w-16 h-16 text-primary/50" />
                   <div className="absolute top-4 right-4 px-3 py-1 rounded-full glass text-xs font-medium">
                     Featured
                   </div>
                 </div>
-
+                
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
                     {project.description}
                   </p>
-
+                  
+                  {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span
@@ -153,9 +122,10 @@ export function Projects() {
                       </span>
                     ))}
                   </div>
-
+                  
+                  {/* Links */}
                   <div className="flex items-center gap-4">
-                    <Link
+                    <Link 
                       href={project.github}
                       target="_blank"
                       className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -163,26 +133,14 @@ export function Projects() {
                       <Github className="w-4 h-4" />
                       Code
                     </Link>
-                    {project.live && project.live !== "#" && (
-                      <Link
-                        href={project.live}
-                        target="_blank"
-                        className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
-                      </Link>
-                    )}
-                    {project.video && (
-                      <Link
-                        href={project.video}
-                        target="_blank"
-                        className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <Video className="w-4 h-4" />
-                        Video
-                      </Link>
-                    )}
+                    <Link 
+                      href={project.live}
+                      target="_blank"
+                      className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Live Demo
+                    </Link>
                   </div>
                 </div>
               </CardContent>
@@ -190,54 +148,45 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Other Projects */}
+        {/* Other Projects - Grid */}
         <h3 className="text-2xl font-semibold mb-8 text-center">
           Other <span className="text-gradient">Projects</span>
         </h3>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {otherProjects.map((project) => (
-            <Card
-              key={project.id}
+            <Card 
+              key={project.id} 
               className="glass border-border hover:border-primary/50 transition-all duration-300 group"
             >
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <Folder className="w-10 h-10 text-primary/50" />
                   <div className="flex items-center gap-3">
-                    <Link
+                    <Link 
                       href={project.github}
                       target="_blank"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Github className="w-5 h-5" />
                     </Link>
-                    {project.live && project.live !== "#" && (
-                      <Link
-                        href={project.live}
-                        target="_blank"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <ExternalLink className="w-5 h-5" />
-                      </Link>
-                    )}
-                    {project.video && (
-                      <Link
-                        href={project.video}
-                        target="_blank"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <Video className="w-5 h-5" />
-                      </Link>
-                    )}
+                    <Link 
+                      href={project.live}
+                      target="_blank"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                    </Link>
                   </div>
                 </div>
-
+                
                 <h4 className="font-semibold mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h4>
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
+                
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
@@ -253,6 +202,7 @@ export function Projects() {
           ))}
         </div>
 
+        {/* GitHub CTA */}
         <div className="text-center mt-12">
           <Button asChild variant="outline" size="lg" className="border-border hover:bg-secondary">
             <Link href="https://github.com/Smily2531" target="_blank">
