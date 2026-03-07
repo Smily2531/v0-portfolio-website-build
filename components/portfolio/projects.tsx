@@ -5,65 +5,65 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Folder } from "lucide-react"
 import Link from "next/link"
 
-// Placeholder projects - User will update these with their actual projects
+// Projects Data
 const projects = [
   {
     id: 1,
-    title: "Project 1",
-    description: "Description of your first project. Explain what problem it solves and the key features.",
-    image: null,
-    tech: ["React", "Node.js", "MongoDB"],
-    github: "https://github.com/Smily2531",
+    title: "FlySmily – Book Smarter, Travel Lighter",
+    description: "A full-stack MERN flight booking app with role-based dashboards for Customers, Admins, and Operators.",
+    image: "https://via.placeholder.com/600x400.png?text=FlySmily",
+    tech: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    github: "https://github.com/Smily2531/FlySmily",
     live: "#",
     featured: true,
   },
   {
     id: 2,
-    title: "Project 2",
-    description: "Description of your second project. Highlight the technologies used and your role.",
-    image: null,
-    tech: ["Next.js", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/Smily2531",
+    title: "CurioCart – E-Commerce App",
+    description: "A Java-based e-commerce platform with shopping cart, order management, and secure payment integration.",
+    image: "https://via.placeholder.com/600x400.png?text=CurioCart",
+    tech: ["Java", "Swing", "MySQL"],
+    github: "https://github.com/Smily2531/CurioCart",
     live: "#",
     featured: true,
   },
   {
     id: 3,
-    title: "Project 3",
-    description: "Description of your third project. Share the impact or results of this project.",
-    image: null,
-    tech: ["Java", "Spring Boot", "MySQL"],
-    github: "https://github.com/Smily2531",
+    title: "Samvaad AI Chatbot",
+    description: "An AI-powered chatbot using Next.js & OpenAI API, designed for real-time user interaction and assistance.",
+    image: "https://via.placeholder.com/600x400.png?text=Samvaad+AI",
+    tech: ["Next.js", "React", "Tailwind CSS", "OpenAI API"],
+    github: "https://github.com/Smily2531/Samvaad-AI",
     live: "#",
     featured: false,
   },
   {
     id: 4,
-    title: "Project 4",
-    description: "Description of your fourth project. Mention any challenges you overcame.",
-    image: null,
-    tech: ["MERN Stack", "REST API"],
-    github: "https://github.com/Smily2531",
+    title: "Hotel Management System",
+    description: "A mini-project for managing hotel reservations, rooms, and customer details with a user-friendly UI.",
+    image: "https://via.placeholder.com/600x400.png?text=Hotel+Management",
+    tech: ["Java", "JPanel", "SQL"],
+    github: "https://github.com/Smily2531/Hotel-Management",
     live: "#",
     featured: false,
   },
   {
     id: 5,
-    title: "Project 5",
-    description: "Description of your fifth project. Include any notable achievements.",
-    image: null,
-    tech: ["React", "Express.js", "MongoDB"],
-    github: "https://github.com/Smily2531",
+    title: "Portfolio Website",
+    description: "A modern, responsive personal portfolio built with Next.js and Tailwind CSS to showcase projects and skills.",
+    image: "https://via.placeholder.com/600x400.png?text=Portfolio",
+    tech: ["Next.js", "React", "Tailwind CSS"],
+    github: "https://github.com/Smily2531/Portfolio",
     live: "#",
     featured: false,
   },
   {
     id: 6,
-    title: "Project 6",
-    description: "Description of your sixth project. Explain what you learned from building it.",
-    image: null,
-    tech: ["Angular", "Node.js", "PostgreSQL"],
-    github: "https://github.com/Smily2531",
+    title: "CurioCart Admin Dashboard",
+    description: "Admin dashboard for CurioCart with analytics, product, and order management.",
+    image: "https://via.placeholder.com/600x400.png?text=CurioCart+Admin",
+    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+    github: "https://github.com/Smily2531/CurioCart-Admin",
     live: "#",
     featured: false,
   },
@@ -86,7 +86,7 @@ export function Projects() {
           </p>
         </div>
 
-        {/* Featured Projects - Larger Cards */}
+        {/* Featured Projects */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {featuredProjects.map((project) => (
             <Card 
@@ -94,10 +94,13 @@ export function Projects() {
               className="glass border-border hover:border-primary/50 transition-all duration-300 group overflow-hidden"
             >
               <CardContent className="p-0">
-                {/* Project Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-cyan-500/20 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Folder className="w-16 h-16 text-primary/50" />
+                {/* Project Image */}
+                <div className="h-48 relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                   <div className="absolute top-4 right-4 px-3 py-1 rounded-full glass text-xs font-medium">
                     Featured
                   </div>
@@ -148,7 +151,7 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Other Projects - Grid */}
+        {/* Other Projects */}
         <h3 className="text-2xl font-semibold mb-8 text-center">
           Other <span className="text-gradient">Projects</span>
         </h3>
