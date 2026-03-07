@@ -10,24 +10,20 @@ const projects = [
   {
     id: 1,
     title: "FlySmily – Book Smarter, Travel Lighter",
-    description: "FlySmily is a full-stack MERN flight booking web application that allows customers to search and book flights while administrators and operators manage flights, bookings, and flight status. The platform supports role-based dashboards for Customers, Admins, and Flight Operators to provide a smooth travel booking experience.",
-    image: "https://drive.google.com/uc?export=view&id=1ZP8CNxxoLGPJk4ysJLb1-BTJaO5-5Ljf",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT Authentication", "Bootstrap/Tailwind CSS", "Cloudinary/Multer (optional)"],
+    description: "Full-stack MERN flight booking app with role-based dashboards for Customers, Admins, and Operators.",
+    image: "https://drive.google.com/file/d/1ZP8CNxxoLGPJk4ysJLb1-BTJaO5-5Ljf/view?usp=sharing",
+    tech: ["React.js", "Node.js", "MongoDB", "Tailwind CSS"],
     github: "https://github.com/Smily2531/FlySmily-BookSmarter-TravelLighter",
     live: "#",
     featured: true,
   },
   {
     id: 2,
-    title: "SAMVAAD – AI Real-Time Communication & Meeting Assistant",
-    description: "SAMVAAD AI is an intelligent real-time communication platform that integrates messaging, video conferencing, and AI-powered meeting intelligence. It provides live transcription, speaker diarization, AI meeting summaries, and PDF reports using a microservices architecture combining React, Node.js, and Python AI services.",
-    image: "https://drive.google.com/uc?export=view&id=1uRom6hXhIEZi2LglEW7gcXTBFRKbqJGX",
-    tech: [
-      "React", "Vite", "Tailwind CSS", "Socket.io Client", "React Query", "Framer Motion",
-      "Node.js", "TypeScript", "Express.js", "MongoDB", "JWT Authentication", "Socket.io",
-      "Python AI Services: FastAPI, Faster-Whisper, Pyannote.audio, PyTorch",
-      "Docker, Jenkins, Vercel"
-    ],
+    title: "SAMVAAD – AI Real-Time Communication",
+    description: "Real-time communication platform with AI meeting summaries, transcription, and video conferencing.",
+    image: "https://drive.google.com/file/d/1uRom6hXhIEZi2LglEW7gcXTBFRKbqJGX/view?usp=sharing
+",
+    tech: ["React", "Node.js", "Python AI Services", "Tailwind CSS"],
     github: "https://github.com/Smily2531/samvaad-ai",
     live: "#",
     featured: true,
@@ -35,9 +31,10 @@ const projects = [
   {
     id: 3,
     title: "Event Ticketing Web Application",
-    description: "A complete MERN stack web application for managing event registrations and ticketing. Organizers can create events and manage registrations, while users can discover events and register for tickets with automatic or manual approval workflows.",
-    image: "https://drive.google.com/uc?export=view&id=1ZyID7FtMTNZ7NdEzFwLvfRRD09oU4Tal",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT Authentication", "Axios", "Context API"],
+    description: "MERN stack web app for managing events, registrations, and ticketing with approval workflows.",
+    image: "https://drive.google.com/file/d/1ZyID7FtMTNZ7NdEzFwLvfRRD09oU4Tal/view?usp=sharing
+",
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
     github: "https://github.com/Smily2531/event-ticketing-app",
     live: "#",
     featured: false,
@@ -45,29 +42,31 @@ const projects = [
   {
     id: 4,
     title: "Secure Steganography Chat",
-    description: "Secure Steganography Chat is a Spring Boot messaging platform where text messages are hidden inside images using LSB (Least Significant Bit) steganography. Messages are never stored in plaintext, ensuring high security by embedding secret messages within image pixels.",
-    image: "https://drive.google.com/uc?export=view&id=1FygjY71eGbseZp9GL0UPGQyBZKG2ifGB",
-    tech: ["Java", "Spring Boot", "MySQL", "Thymeleaf", "HTML", "CSS", "JavaScript", "Bootstrap", "Canvas API"],
+    description: "Spring Boot chat app hiding messages inside images using LSB steganography for high security.",
+    image: "https://drive.google.com/file/d/1FygjY71eGbseZp9GL0UPGQyBZKG2ifGB/view?usp=sharing
+",
+    tech: ["Java", "Spring Boot", "MySQL", "Bootstrap"],
     github: "https://github.com/Smily2531/Secure-Steganography-Chat",
     live: "#",
     featured: false,
   },
   {
     id: 5,
-    title: "Deep Learning Fundus Image Analysis for Diabetic Retinopathy Detection",
-    description: "A deep learning web application that detects diabetic retinopathy from retinal fundus images using an Xception-based convolutional neural network. The application allows users to upload medical images and receive instant AI predictions through a Flask web interface.",
-    image: "https://drive.google.com/uc?export=view&id=1Hstt-CrKE2tWVzpgAc9Oy4bmGNmQbLbh",
-    tech: ["Python", "TensorFlow/Keras", "Xception CNN", "Flask", "NumPy", "HTML", "CSS"],
+    title: "Deep Learning Fundus Image Analysis",
+    description: "AI app detecting diabetic retinopathy from retinal images using Xception CNN and Flask interface.",
+    image: "https://drive.google.com/file/d/1Hstt-CrKE2tWVzpgAc9Oy4bmGNmQbLbh/view?usp=sharing",
+    tech: ["Python", "TensorFlow", "Flask"],
     github: "https://github.com/Smily2531/DeepLearning_Fundus_DR",
     live: "#",
     featured: false,
   },
   {
     id: 6,
-    title: "Login & Registration Form with Navigation Bar",
-    description: "A responsive login and registration web interface featuring a modern navigation bar and toggle functionality between login and signup forms. The project demonstrates clean UI design and basic form validation using HTML, CSS, and JavaScript.",
-    image: "https://drive.google.com/uc?export=view&id=1cuGtHmQSQVkF2yiupLja0hfL3x0XS98-",
-    tech: ["HTML5", "CSS3", "JavaScript"],
+    title: "Login & Registration Form",
+    description: "Responsive login/signup interface with modern navbar and clean form validation.",
+    image: "https://drive.google.com/file/d/1cuGtHmQSQVkF2yiupLja0hfL3x0XS98-/view?usp=sharing
+",
+    tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Smily2531/login-registration-form-menubar",
     live: "#",
     featured: false,
@@ -108,7 +107,7 @@ export function Projects() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{project.description}</p>
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span key={tech} className="px-2 py-1 text-xs rounded-full bg-secondary text-muted-foreground">{tech}</span>
