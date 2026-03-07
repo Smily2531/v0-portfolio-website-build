@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Folder } from "lucide-react"
+import { ExternalLink, Github } from "lucide-react"
 import Link from "next/link"
 
 // Projects Data
@@ -91,7 +91,7 @@ export function Projects() {
           {featuredProjects.map((project) => (
             <Card key={project.id} className="glass border-border hover:border-primary/50 transition-all duration-300 group overflow-hidden">
               <CardContent className="p-0">
-                <div className="h-48 relative overflow-hidden">
+                <div className="relative w-full aspect-video overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -127,25 +127,32 @@ export function Projects() {
         <h3 className="text-2xl font-semibold mb-8 text-center">Other <span className="text-gradient">Projects</span></h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {otherProjects.map((project) => (
-            <Card key={project.id} className="glass border-border hover:border-primary/50 transition-all duration-300 group">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <Folder className="w-10 h-10 text-primary/50" />
-                  <div className="flex items-center gap-3">
-                    <Link href={project.github} target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
-                      <Github className="w-5 h-5" />
+            <Card key={project.id} className="glass border-border hover:border-primary/50 transition-all duration-300 group overflow-hidden">
+              <CardContent className="p-0">
+                {/* Image with hover zoom effect */}
+                <div className="relative w-full aspect-video overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h4 className="font-semibold mb-2 group-hover:text-primary transition-colors">{project.title}</h4>
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech) => (
+                      <span key={tech} className="px-2 py-1 text-xs rounded-full bg-secondary text-muted-foreground">{tech}</span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Link href={project.github} target="_blank" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
+                      <Github className="w-4 h-4" /> Code
                     </Link>
-                    <Link href={project.live} target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
-                      <ExternalLink className="w-5 h-5" />
+                    <Link href={project.live} target="_blank" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
+                      <ExternalLink className="w-4 h-4" /> Live Demo
                     </Link>
                   </div>
-                </div>
-                <h4 className="font-semibold mb-2 group-hover:text-primary transition-colors">{project.title}</h4>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span key={tech} className="text-xs text-muted-foreground">{tech}</span>
-                  ))}
                 </div>
               </CardContent>
             </Card>
