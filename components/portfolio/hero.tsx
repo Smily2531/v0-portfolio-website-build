@@ -28,13 +28,12 @@ export function Hero() {
             </h1>
             
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium">
-              Full Stack Developer| B.Tech CSE (ACET)
+              Full Stack Developer
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-             I build modern web applications using MERN Stack and have strong skills in Java, DSA, and Spring Boot basics. 
-              I’m passionate about problem-solving and competitive programming, 
-              constantly learning and creating impactful projects
+             I Build Modern Web Applications Using MERN Stack and Have Strong Skills in Java, DSA, and Spring Boot Basics.
+              I’m Passionate About Problem-Solving and Competitive Programming, Constantly Learning and Creating Impactful Projects.
             </p>
             
             <div className="flex items-center gap-2 text-muted-foreground">
