@@ -99,7 +99,7 @@ export function Hero() {
                 MERN Stack
               </div>
               <div className="absolute -bottom-4 left-4 px-4 py-2 rounded-full glass text-sm font-medium animate-float" style={{ animationDelay: '1s' }}>
-                React.js
+                Spring Boot
               </div>
               <div className="absolute top-1/2 -left-8 px-4 py-2 rounded-full glass text-sm font-medium animate-float" style={{ animationDelay: '1.5s' }}>
                 Java
