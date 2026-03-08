@@ -52,7 +52,7 @@ export function Navbar() {
           ))}
           <ThemeToggle />
           <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <Link href="/resume.pdf" target="_blank">
+            <Link href="https://drive.google.com/uc?export=download&id=1c9c7HhBwlWwE-8-RH2U_zqp1gn3eB0s4" target="_blank">
               Resume
             </Link>
           </Button>
@@ -88,7 +88,7 @@ export function Navbar() {
               <ThemeToggle />
             </div>
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
-              <Link href="/resume.pdf" target="_blank">
+              <Link href="https://drive.google.com/uc?export=download&id=1c9c7HhBwlWwE-8-RH2U_zqp1gn3eB0s4" target="_blank">
                 Resume
               </Link>
             </Button>
