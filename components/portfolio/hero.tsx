@@ -28,13 +28,13 @@ export function Hero() {
             </h1>
             
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium">
-              Full Stack Developer
+              Full Stack Developer| B.Tech CSE (ACET)
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              BTech 4th-year CSE student at Aditya College of Engineering & Technology (ACET) 
-              with skills in Java Programming, DSA, MERN Stack, and Basics of SpringBoot. 
-              Passionate about competitive programming and problem-solving.
+             I build modern web applications using MERN Stack and have strong skills in Java, DSA, and Spring Boot basics. 
+              I’m passionate about problem-solving and competitive programming, 
+              constantly learning and creating impactful projects
             </p>
             
             <div className="flex items-center gap-2 text-muted-foreground">
@@ -51,7 +51,7 @@ export function Hero() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-border hover:bg-secondary">
-                <Link href="/resume.pdf" target="_blank">
+                <Link href="https://drive.google.com/uc?export=download&id=1c9c7HhBwlWwE-8-RH2U_zqp1gn3eB0s4" target="_blank">
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
                 </Link>
